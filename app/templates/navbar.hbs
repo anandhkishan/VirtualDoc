@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index' class="navbar-brand"}}<span style="color:white;">VirtualDoc</span>{{/link-to}}
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav">
+        {{#link-to  'index' tagName="li"}}<a style="color:white;" href>Home</a>{{/link-to}}
+        {{#link-to 'contact' tagName="li"}}<a style="color:white;" href>Contact</a>{{/link-to}}
+        {{#link-to 'about' tagName="li"}}<a style="color:white;" href>About</a>{{/link-to}}
+
+      </ul>
+    </div>
+  </div>
+</nav>

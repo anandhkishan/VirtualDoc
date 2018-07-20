@@ -1,0 +1,34 @@
+<div class="wrapper">
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+          <h3>Welcome,{{#each model as |login|}}{{login.email}}{{/each}}</h3>
+      </div>
+      <ul class="list-unstyled components">
+        <strong> <p>Categories</p></strong>
+
+            <li >
+              <a style="color:black;"href="#">General</a>
+
+            </li>
+            <li>
+                <a style="color:black;"href="#">Diabetes & Blood Pressure</a>
+            </li>
+            <li>
+                <a style="color:black;" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Heart-Related</a>
+            </li>
+            <li>
+                <a style="color:black;" href="#">Stress-management</a>
+            </li>
+            <li>
+                <a style="color:black;" href="#">Obesity</a>
+            </li>
+        </ul>
+    </nav>
+<div id="content">
+  {{chat-init}}
+</div>
+
+
+</div>

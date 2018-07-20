@@ -1,9 +1,10 @@
+{{partial 'navbar'}}
 <div class="wrapper">
 
     <!-- Sidebar -->
     <nav id="sidebar">
       <div class="sidebar-header">
-          <h3>Welcome,{{#each model as |login|}}{{login.email}}{{/each}}</h3>
+          <h3>Welcome,<br>{{email}}{{#each model as |login|}}{{login.email}}{{/each}}</h3>
       </div>
       <ul class="list-unstyled components">
         <strong> <p>Categories</p></strong>
@@ -27,8 +28,6 @@
         </ul>
     </nav>
 <div id="content">
-  {{chat-init}}
 </div>
-
 
 </div>

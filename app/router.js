@@ -11,11 +11,12 @@ Router.map(function() {
   this.route('contact');
   this.route('navbar');
   this.route('pdashboard');
-
-  this.route('index', function() {
+  this.route('home', function() {
     this.route('signin');
     this.route('signup');
   });
+  this.route('home',{path:'/'});
+  this.route('index');
 });
 
 export default Router;

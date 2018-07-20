@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'home' class="navbar-brand"}}<span style="color:white;">VirtualDoctor</span>{{/link-to}}
+    </div>
+  </div>
+</nav>
+<div class="well">
+  <ul class="nav nav-tabs">
+    {{#link-to 'home.signin' tagName="li"}}<a href="">SignIn</a>{{/link-to}}
+    {{#link-to 'home.signup' tagName="li"}}<a href="">Create Account</a>{{/link-to}}
+  </ul>
+</div>
+{{outlet}}

@@ -1,17 +1,23 @@
 import Controller from '@ember/controller';
-import { match, not } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 export default Controller.extend({
-  emailAddress:'',
-  password:'',
-  responseMessage:'',
+  auth: service('authentication'),
   actions: {
-    signInDetails(){
-      const email = this.get("email");
-      const passwd = this.get("password");
-      const dataRecord = this.store.createRecord('login',{email: email,password:passwd });
-      dataRecord.save().then(response => {
-             this.transitionToRoute('pdashboard');
-           });
-    }
+      login() {
+          var self = this;
+          var loginData = {};
+          loginData["usernameOrEmail"] = this.get("email");
+          loginData["password"] = this.get("password");
+          //console.log(loginData);
+          this.get('auth').login(loginData).then((result) => {
+
+              localStorage.setItem("loggedin",JSON.stringify(result));
+
+              self.transitionToRoute('pdashboard');
+          }).catch(err => {
+              // alert(JSON.parse(err)["message"])
+              console.log(err)
+          })
+      }
   }
 });

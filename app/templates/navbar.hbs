@@ -15,7 +15,7 @@
         {{#link-to  'pdashboard' tagName="li"}}<a style="color:white;" href>Home</a>{{/link-to}}
         {{#link-to 'contact' tagName="li"}}<a style="color:white;" href>Contact</a>{{/link-to}}
         {{#link-to 'about' tagName="li"}}<a style="color:white;" href>About</a>{{/link-to}}
-        {{#link-to 'home' tagName="li"}}<a style="color:white;" href>LogOut</a>{{/link-to}}
+        {{#link-to 'home' tagName="li"}}<a {{action "loggedOut"}} style="color:white;" href>LogOut</a>{{/link-to}}
 
       </ul>
     </div>

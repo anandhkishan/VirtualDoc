@@ -7,7 +7,7 @@
 					<img src="assets/images/doc.jpg" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" {{action "grabNewEmail" on="submit"}}>
+				<form class="login100-form validate-form" >
 
 
 					<span class="login100-form-title">
@@ -15,7 +15,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" >
-              <label>Email:</label> {{input type="email" id="ddd" value=email class="form-control" placeholder="Enter your email" autofocus="autofocus"}}						<span class="focus-input100"></span>
+              <label>Email or Username:</label> {{input type="email" id="ddd" value=email class="form-control" placeholder="Enter your email" autofocus="autofocus"}}						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
@@ -30,7 +30,7 @@
 					</div>
 					<div class="container-login100-form-btn">
 
-						<button {{action "signInDetails" }}class="login100-form-btn">
+						<button {{action "login" }}class="login100-form-btn">
 								Login
 						</button>
 

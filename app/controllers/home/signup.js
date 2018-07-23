@@ -1,21 +1,23 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  name:"",
-  email:'',
-  password:'',
-  username:'',
-  actions:{
-    signupDetails(){
-      const rname = this.get("name2");
-      const remail = this.get("email2");
-      const rpassword = this.get("password2");
-      const rusername = this.get("username2");
-      const dataRecord2 = this.store.createRecord('signup', { name: rname,email:remail,password:rpassword,username:rusername });
-      dataRecord2.save().then(response => {
-             console.log("transfer is success");
-             this.transitionToRoute('/home/signin');
-           });
+responseMessage:true,
+swapPages:true,
+actions:{
+    docSignup(){
+      this.set("responseMessage",false);
+    },
+    patSignup(){
+      this.set("responseMessage",false);
+      this.set("swapPages",false);
+    },
+    goBack1(){
+      this.set("responseMessage",true);
+      this.set("swapPages",true);
+    },
+    goBack2(){
+      this.set("responseMessage",true);
+      this.set("swapPages",true);
     }
-  }
+}
 });

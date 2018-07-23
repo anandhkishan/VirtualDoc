@@ -1,51 +1,28 @@
-<div class="wrap-login100">
-
-
-  <div class="login100-pic js-tilt" data-tilt>
-    <img src="assets/images/doc.jpg" alt="IMG">
+{{#if responseMessage}}
+<link rel="stylesheet" href="assets/css/split.css">
+<div class="choice">
+  <div class="split left">
+    <div class="centered1">
+       <a {{action "docSignup"}} href="#"><img class="imageSize" src="assets/images/doc2.jpg" alt="IMG"></a>
+      <h2>..as Doctor</h2>
+      <p style="color:#B170CA">Get the satisfaction of curing<br> some more patients :)</p>
+    </div>
   </div>
 
-  <form class="login100-form validate-form">
-
-
-    <span class="login100-form-title">
-      Sign Up for Virtual Doctor
-    </span>
-    <div class="wrap-input100 validate-input" data-validate = "Password is required">
-    <label>Name:</label> {{input type="text" value=name2 class="form-control" placeholder="Enter Name"}}
-      <span class="focus-input100"></span>
-      <span class="symbol-input100">
-        <i class="fa fa-lock" aria-hidden="true"></i>
-      </span>
+  <div class="split right">
+    <div class="centered2">
+      <a {{action "patSignup"}} href="#"><img class="imageSize" src="assets/images/patient.jpg" alt="IMG"></a>
+      <h2>..as Patient</h2>
+      <p style="color:white">A little step to becoming healthy.</p>
     </div>
-    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-      <label>Email:</label> {{input type="text" value=email2 class="form-control"  placeholder="enter email"}}
-      <span class="focus-input100"></span>
-      <span class="symbol-input100">
-        <i class="fa fa-envelope" aria-hidden="true"></i>
-      </span>
-    </div>
-
-
-
-    <div class="wrap-input100 validate-input" data-validate = "Password is required">
-      <label>Password:</label> {{input type="password" class="form-control" value=password2 placeholder="Enter password"}}						<span class="focus-input100"></span>
-      <span class="symbol-input100">
-        <i class="fa fa-lock" aria-hidden="true"></i>
-      </span>
-    </div>
-
-    <div class="wrap-input100 validate-input" data-validate = "Password is required">
-    <label>Username:</label> {{input type="text" class="form-control" value=username2 placeholder="Username"}}
-      <span class="focus-input100"></span>
-      <span class="symbol-input100">
-        <i class="fa fa-lock" aria-hidden="true"></i>
-      </span>
-    </div>
-    <div class="container-login100-form-btn">
-      <button {{action 'signupDetails'}}class="login100-form-btn">
-        Create Account
-      </button>
-    </div>
-  </form>
+  </div>
 </div>
+{{else}}
+{{#if swapPages}}
+<button {{action "goBack1"}} style="background-color:#63AE81;color:white;"type="button" name="button">Go back</button>
+{{partial "home/signup-doc"}}
+{{else}}
+<button {{action "goBack2"}} style="background-color:#63AE81;color:white;" type="button" name="button">Go back</button>
+{{partial "home/signup-pat"}}
+{{/if}}
+{{/if}}

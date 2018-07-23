@@ -10,12 +10,20 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('navbar');
-  this.route('pdashboard');
-  this.route('home', function() {
+  this.route('pdashboard',{ path: '/pdashboard' }, function() {
+    this.route('general');
+    this.route('dbp');
+    this.route('cardio');
+    this.route('stress');
+    this.route('obese');
+  });
+  this.route('home',{path:'/'}, function() {
     this.route('signin');
     this.route('signup');
+    this.route('signup-doc');
+    this.route('signup-pat');
   });
-  this.route('home',{path:'/'});
+
   this.route('index');
 });
 

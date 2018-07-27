@@ -25,6 +25,9 @@ Router.map(function() {
   });
 
   this.route('index');
+  this.route('d-dashboard');
+  this.route('profile');
+  this.route('admin-dashboard');
 });
 
 export default Router;

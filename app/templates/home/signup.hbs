@@ -1,9 +1,9 @@
 {{#if responseMessage}}
-<link rel="stylesheet" href="assets/css/split.css">
+<link rel="stylesheet" href="home/assets/css/split.css">
 <div class="choice">
   <div class="split left">
     <div class="centered1">
-       <a {{action "docSignup"}} href="#"><img class="imageSize" src="assets/images/doc2.jpg" alt="IMG"></a>
+       <a {{action "docSignup"}} href="#"><img class="imageSize" src="home/assets/images/doc2.jpg" alt="IMG"></a>
       <h2>..as Doctor</h2>
       <p style="color:#B170CA">Get the satisfaction of curing<br> some more patients :)</p>
     </div>
@@ -11,7 +11,7 @@
 
   <div class="split right">
     <div class="centered2">
-      <a {{action "patSignup"}} href="#"><img class="imageSize" src="assets/images/patient.jpg" alt="IMG"></a>
+      <a {{action "patSignup"}} href="#"><img class="imageSize" src="home/assets/images/patient.jpg" alt="IMG"></a>
       <h2>..as Patient</h2>
       <p style="color:white">A little step to becoming healthy.</p>
     </div>
@@ -19,10 +19,10 @@
 </div>
 {{else}}
 {{#if swapPages}}
-<button {{action "goBack1"}} style="background-color:#63AE81;color:white;"type="button" name="button">Go back</button>
+<button {{action "goBack1"}} style="background-color:#63AE81;color:white;border-radius: 8px;"type="button" name="button">Go back</button>
 {{partial "home/signup-doc"}}
 {{else}}
-<button {{action "goBack2"}} style="background-color:#63AE81;color:white;" type="button" name="button">Go back</button>
+<button {{action "goBack2"}} style="background-color:#63AE81;color:white;border-radius: 8px;" type="button" name="button">Go back</button>
 {{partial "home/signup-pat"}}
 {{/if}}
 {{/if}}

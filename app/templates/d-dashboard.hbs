@@ -1,0 +1,37 @@
+{{nav-bar}}
+<div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+          <h3>Hello Dr.{{name}},
+              <br>Welcome
+          </h3>
+      </div>
+      <ul class="list-unstyled components">
+
+            <li >
+              <a {{action "patientList"}} style="color:black;"href="#">View Requested Patients</a>
+
+            </li>
+            <li>
+                <a {{action "doctorsSame"}} style="color:black;"href="#">Total Doctors of same designation</a>
+            </li>
+            <li>
+                <a{{action "totalDoctors"}} style="color:black;" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Total Doctors</a>
+            </li>
+            
+        </ul>
+    </nav>
+<div id="content">
+</div>
+{{#if responseMessage}}
+{{#if patList}}
+<h1>This shows the list of patients</h1>
+{{/if}}
+{{#if sameDoc}}
+<h1>THis shows the doctors of same designation</h1>
+{{/if}}
+{{#if totalDr}}
+<h1>THis shows the total number of doctors available in all categories</h1>
+{{/if}}
+{{/if}}
+</div>

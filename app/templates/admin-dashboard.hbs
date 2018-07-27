@@ -1,0 +1,54 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      {{!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> --}}
+      {{#link-to 'admin-dashboard' class="navbar-brand"}}<span style="color:white;">VirtualDoctor</span>{{/link-to}}
+    </div>
+    </div>
+</nav>
+<div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+          <h3>Admin Dashboard
+          </h3>
+      </div>
+      <ul class="list-unstyled components">
+
+            <li >
+              <a {{action "DocList"}} style="color:black;"href="#">Doctors List</a>
+
+            </li>
+            <li>
+                <a {{action "PatList"}} style="color:black;"href="#">Patients List</a>
+            </li>
+            
+        </ul>
+    </nav>
+   
+    <div style="    margin: 75px;
+    width: 30%;
+    padding: 15px;"  id="content">
+        {{#if docShow}}
+        <h1>List of Doctors:</h1>
+      {{#each model as |doclist|}} 
+        <div class="col">
+          <div style="border: 3px solid grey; padding:5px;" class="col">
+    <div class="row-sm-3" style="background-color:lavender;">{{doclist.name}}</div>
+    <div class="row-sm-3" style="background-color:lavender;">Username|{{doclist.username}}</div>
+    <div class="row-sm-3" style="background-color:lavender;">Email   |{{doclist.email}}</div>
+  </div>
+  </div>
+  
+        <br><br><br><br>
+        {{/each}}
+        {{/if}}
+        {{#if patientShow}}
+        <p>This is pat list</p>
+        {{/if}}
+    </div>
+     </div>

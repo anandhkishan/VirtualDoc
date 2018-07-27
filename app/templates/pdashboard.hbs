@@ -1,33 +1,140 @@
-{{partial 'navbar'}}
-<div class="wrapper">
+{{nav-bar}}
+<div class="wrapper"style="background-color:#f6e8fc;">
 
     <!-- Sidebar -->
     <nav id="sidebar">
       <div class="sidebar-header">
-          <h3>Welcome</h3>
+          <h3>Welcome,<br>{{username}}</h3>
       </div>
       <ul class="list-unstyled components">
         <strong> <p>Categories</p></strong>
 
             <li >
-              <a style="color:black;"href="#">General</a>
+              <a {{action "general"}}style="color:black;"href="#">General</a>
 
             </li>
             <li>
-                <a style="color:black;"href="#">Diabetes & Blood Pressure</a>
+                <a {{action "DBP"}}style="color:black;"href="#">Diabetes & Blood Pressure</a>
             </li>
             <li>
-                <a style="color:black;" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Heart-Related</a>
+                <a {{action "heart"}}style="color:black;" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Heart-Related</a>
             </li>
             <li>
-                <a style="color:black;" href="#">Stress-management</a>
-            </li>
-            <li>
-                <a style="color:black;" href="#">Obesity</a>
+                <a {{action "stress"}}style="color:black;" href="#">Stress-management</a>
             </li>
         </ul>
     </nav>
-<div id="content">
+<div  id="content">
+
+
+<div style="padding:40px;"class="h-100 row align-items-center">
+{{#if generalVal}}
+{{#unless chatinit}}
+<div class="container">
+   
+    <div class="col-md-4">
+        <img style="width:350px;height: auto;"src="assets/images/general.png">
+    </div>
+    <div class="col-md-8">
+        <h2>General Category</h2>
+        <p style="font-size: 20px;">For commonly and easily curable problems in health faced in our day-to-day life.We have doctors who provides preventive care and health education to patients.The category include cold,fever,headache and other common problems associated with our day-to-day life.</p>
+    </div>
 </div>
+<br><br><br>
+					<div class="container-login100-form-btn">
+
+						<button {{action "generalChat"}}style="width: 20em;  height: 2em;" class="login100-form-btn">
+								start to chat
+						</button>
+
+					</div>
+                    {{/unless}}
+                    {{#if chatinit}}
+                     <button {{action "goBack"}} style="background-color:#63AE81;color:white;border-radius: 8px;" type="button" name="button">Go back</button>
+                    {{chat-start}}
+                    {{/if}}
+                    {{/if}}
+        {{#if dbpVal}}
+        {{#unless chatinit}}
+        <div class="container">
+        <div class="col-md-4">
+        <img style="width:350px;height: auto;"src="assets/images/DBP.jpg">
+    </div>
+    <div class="col-md-8">
+        <h2>Diabetes and BP</h2>
+        <p style="font-size: 20px;">If diabetes is not controlled, it can cause serious damage to your kidneys, eyes, nervous system, heart and blood vessels. Treatment for diabetes aims to avoid this by keeping blood sugar levels as near to normal as possible.And Blood Pressure is found in one third of people in today's busy lifestyle.You can help to lower your risk of diabetes and blood pressure by following a healthy lifestyle. To know more start chatting with our doctors :)</p>
+        </div>
+</div>
+<br><br><br>
+					<div class="container-login100-form-btn">
+
+						<button {{action "DBPChat"}} style="width: 20em;  height: 2em;" class="login100-form-btn">
+								start to chat
+						</button>
+
+					</div>
+                    {{/unless}}
+                    {{#if chatinit}}
+                     <button {{action "goBack"}} style="background-color:#63AE81;color:white;border-radius: 8px;" type="button" name="button">Go back</button>
+                    {{chat-start}}
+                    {{/if}}
+        {{/if}}
+                {{#if heartVal}}
+                {{#unless chatinit}}
+        <div class="container">
+        <div class="col-md-4">
+        <img style="width:350px;height: auto;"src="assets/images/heart2.jpg">
+    </div>
+    <div class="col-md-8">
+        <h2>Heart-Related</h2>
+        <p style="padding:10px" style="font-size: 20px;">Caring for your heart through a healthy diet and regular physical activity is the secret weapon to preventing heart disease. While many may assume that popping a few pills that your healthcare provider prescribed is enough to quell symptoms or prevent a heart attack, the real preventative power lies with real changes to your lifestyle – which can reduce the risk for heart disease by as much as 80 percent.To know more start chatting with our doctors :)</p>
+        </div>
+</div>
+<br><br><br>
+					<div class="container-login100-form-btn">
+
+						<button {{action "heartChat"}} style="width: 20em;  height: 2em;" class="login100-form-btn">
+								start to chat
+						</button>
+
+					</div>
+                    {{/unless}}
+                    {{#if chatinit}}
+                    <button {{action "goBack"}} style="background-color:#63AE81;color:white;border-radius: 8px;" type="button" name="button">Go back</button>
+                    {{chat-start}}>
+                    {{/if}}
+        {{/if}}
+                {{#if stressVal}}
+                {{#unless chatinit}}
+        <div class="container">
+        <div class="col-md-4">
+        <img style="width:350px;height: auto;"src="assets/images/stress2.jpg">
+    </div>
+    <div class="col-md-8">
+        <h2>Stress-management</h2>
+        <p style="font-size: 20px;">Sometimes stress can be a positive force, motivating you to perform well at your piano recital or job interview. But often — like when you're stuck in traffic — it's a negative force. If you experience stress over a prolonged period of time, it could become chronic — unless you take action.To know more start chatting with our doctors :)</p>
+        </div>
+</div>
+<br><br><br>
+					<div class="container-login100-form-btn">
+
+						<button {{action "stressChat"}}style="width: 20em;  height: 2em;" class="login100-form-btn">
+								start to chat
+						</button>
+
+					</div>
+                    {{/unless}}
+                    {{#if chatinit}}
+                    {{chat-start}}
+                  <button {{action "goBack"}} style="background-color:#63AE81;color:white;border-radius: 8px;" type="button" name="button">Go back</button>
+
+                    {{/if}}
+        {{/if}}
+
+</div>
+</div>
+
+
+
 
 </div>

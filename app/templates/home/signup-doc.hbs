@@ -1,17 +1,23 @@
 <div class="wrap-login100">
   <div class="login100-pic js-tilt" data-tilt>
-    <img src="assets/images/doc.jpg" alt="IMG">
+    <img src="home/assets/images/doc2.jpg" alt="IMG">
   </div>
 
   <form class="login100-form validate-form">
-    
+
 
     <span class="login100-form-title">
       Sign Up as Doctor
     </span>
     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-    <label>Name:</label> {{input type="text" value=name2 class="form-control" placeholder="Enter Name"}}
+    <label>Full Name:</label> {{input type="text" value=name2 class="form-control" placeholder="Enter Name"}}
       <span class="focus-input100"></span>
+      <span class="symbol-input100">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+          <label>Username:</label> {{input type="text" class="form-control" value=username2 placeholder="Username"}}
       <span class="symbol-input100">
         <i class="fa fa-lock" aria-hidden="true"></i>
       </span>
@@ -23,25 +29,39 @@
         <i class="fa fa-envelope" aria-hidden="true"></i>
       </span>
     </div>
+    <div class="validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+      <label>Category:</label>
+  <div class="dropdown form-inline">
+    <button style="background-color:#f7f7f7"class="btn btn-secondary" type="button" data-toggle="dropdown">{{categLabel}}
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li{{action "generalDD"}}><a href="#">General</a></li>
+      <li{{action "dbpDD"}}><a href="#">Diabetes and Blood Pressure</a></li>
+      <li{{action "heartDD"}}><a href="#">Heart-related</a></li>
+      <li{{action "stressDD"}}><a href="#">Stress-Management</a></li>
+    </ul>
+    </div>
+  </div>
+
 
 
 
     <div class="wrap-input100 validate-input" data-validate = "Password is required">
       <label>Password:</label> {{input type="password" class="form-control" value=password2 placeholder="Enter password"}}						<span class="focus-input100"></span>
+      <span class="focus-input100"></span>
       <span class="symbol-input100">
         <i class="fa fa-lock" aria-hidden="true"></i>
       </span>
     </div>
-
-    <div class="wrap-input100 validate-input" data-validate = "Password is required">
-    <label>Username:</label> {{input type="text" class="form-control" value=username2 placeholder="Username"}}
+        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+      <label>Re-Type Password:</label> {{input type="password" class="form-control" value=cpassword2 placeholder="Enter password"}}						<span class="focus-input100"></span>
       <span class="focus-input100"></span>
       <span class="symbol-input100">
         <i class="fa fa-lock" aria-hidden="true"></i>
       </span>
     </div>
     <div class="container-login100-form-btn">
-      <button {{action 'signupDetails'}}class="login100-form-btn">
+      <button {{action 'signupDoc'}}class="login100-form-btn">
         Create Account
       </button>
     </div>

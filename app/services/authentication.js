@@ -3,7 +3,7 @@ import { Promise } from 'rsvp'
 //import { inject } from '@ember/service'
 
 
-var BASE_URL = "http://192.168.73.253:8080/api/auth"
+var BASE_URL = "http://192.168.78.159:8080/api/auth"
 export default Service.extend({
     ajax: Ember.inject.service(),
     login: function (loginData) {

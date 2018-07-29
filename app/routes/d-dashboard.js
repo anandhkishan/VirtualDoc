@@ -20,16 +20,20 @@ export default Route.extend({
           },
         
     model(){
-       // store.findRecord('post', {: 'all'});
-        return this.store.findRecord('doctor',JSON.parse(localStorage.getItem("loggedin")).username).then(result=>{
-            console.log(result.get('category'))
-            return this.store.query('message', result.get('category'))
-        })
-        console.log("asdxczxcqezca",category)
+    //    // store.findRecord('post', {: 'all'});
+    //     return this.store.findRecord('doctor',JSON.parse(localStorage.getItem("loggedin")).username).then(result=>{
+    //         console.log("hello world",result.get('category'))
+    //         
+    //     })
+    //     console.log("asdxczxcqezca",category)
+    return this.store.findAll('message');
         
     },
     setupController: function(controller, model){
         controller.set('name', JSON.parse(localStorage.getItem("loggedin")).name);
-        
+        this.store.findAll('message').then(messages => {
+            controller.set('messages', messages);
+            });
     }
+    
 });

@@ -31,7 +31,7 @@ connect() {
 this.clearFeedback();
 var comp = this;
 var cate = this.get('category');
-var socket = new SockJS('http://192.168.78.159:8080/ws');
+var socket = new SockJS('http://localhost:8080/ws');
 this.stompClient = Stomp.over(socket);
 this.stompClient.connect({}, function (/*frame*/) {
 comp.set('connected', true);

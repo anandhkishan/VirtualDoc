@@ -26,16 +26,25 @@
         </ul>
     </nav>
     </div> --}}
-
-<div id="profile-css" class="container">
-  <img src="/assets/images/general.jpg" alt="John" style="width:100%">
-  {{!-- <h1>{{name}}</h1> --}}
+<link rel="stylesheet" href="/assets/css/prof.css">
+<div style="text-align:center;padding:10px;"id="profile-css" class="container">
+    {{#if docOrPat}}
+  <img src="/assets/images/doc.jpeg" alt="John" style="width:50%;height:50%;border-radius:50%;">
+    {{/if}}
+    {{#unless docOrPat}}
+      <img src="/assets/images/pat.png" alt="John" style="width:50%;height:50%;border-radius:50%;">
+    {{/unless}}
+  <h1>Name:{{name}}</h1>
   {{!-- <h1>{{name}}</h1> --}}
 
   {{!-- <p class="title">username:{{username}}</p> --}}
-  <h4 class="title">{{username}}</h4>
+  <h4 class="title">Username:{{username}}</h4>
   {{!-- <p>{{role}}</p> --}}
-    <h4>{{role}}</h4>
+    {{#if docOrPat}}
+    <h4>Role:{{role}}</h4>
+    {{else}}
+    <h4>Role:{{role}}</h4>
+    {{/if}}
 
   <a href="#"><i class="fa fa-dribbble"></i></a> 
   <a href="#"><i class="fa fa-twitter"></i></a> 

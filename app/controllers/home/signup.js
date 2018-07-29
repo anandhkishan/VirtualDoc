@@ -50,7 +50,7 @@ actions:{
   
   },
   signupPat(){
-    if (this.get('name3') != undefined && this.get('email3') != undefined && this.get('username3') != undefined && this.get('password3') != undefined && this.get('cpassword3') != undefined && this.get("category")) {
+    if (this.get('name3') != undefined && this.get('email3') != undefined && this.get('username3') != undefined && this.get('password3') != undefined && this.get('cpassword3') != undefined) {
         if (this.get('password3') === this.get('cpassword3')) {
 
             let rec = this.store.createRecord('signup', { name: this.get('name3'), username: this.get('username3'), email: this.get('email3'), password: this.get('password3') })

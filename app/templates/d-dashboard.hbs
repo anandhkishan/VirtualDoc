@@ -8,7 +8,7 @@
       </div>
       <ul class="list-unstyled components">
 
-            <li >
+            {{!-- <li >
               <a {{action "patientList"}} style="color:black;"href="#">View Requested Patients</a>
 
             </li>
@@ -18,20 +18,31 @@
             <li>
                 <a{{action "totalDoctors"}} style="color:black;" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Total Doctors</a>
             </li>
-            
+             --}}
+             {{#each messages as |patList|}} 
+             <li>
+                <a {{action "initChat"}}  style="color:black;"href="#">{{patList.sender}}</a>
+            </li>
+            {{/each}}
         </ul>
     </nav>
 <div id="content">
+ {{#if chatstart}}
+ <div style="padding:40px;"class="h-100 row align-items-center">
+
+ <div class="container-login100-form-btn">
+
+						<button {{action "heartChat"}} style="width: 20em;  height: 2em;" class="login100-form-btn">
+								start to chat
+						</button>
+
+					</div>
+                    </div>
+{{/if}}
+{{#if chatinit}}
+
+{{chat-start}}
+{{/if}}
 </div>
-{{#if responseMessage}}
-{{#if patList}}
-<h1>This shows the list of patients</h1>
-{{/if}}
-{{#if sameDoc}}
-<h1>THis shows the doctors of same designation</h1>
-{{/if}}
-{{#if totalDr}}
-<h1>THis shows the total number of doctors available in all categories</h1>
-{{/if}}
-{{/if}}
+
 </div>

@@ -1,7 +1,7 @@
 import Service from '@ember/service';
 import {Promise} from 'rsvp';
 
-var BASE_URL = "http://192.168.78.159:8080/api/";
+var BASE_URL = "http://localhost:8080/api/";
 var user = localStorage.getItem("loggedin");
 export default Service.extend({
     ajax:Ember.inject.service(),

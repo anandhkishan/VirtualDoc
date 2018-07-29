@@ -9,9 +9,9 @@ export default ApplicationAdapter.extend({
         'Content-Type': 'application/json'
         });
         },
-        buildURL (modelName, id, snapshot, requestType, query){
-            console.log(modelName, id, snapshot, requestType, query);
-            return `/messages/${query}`;
-        },
+        // buildURL (modelName, id, snapshot, requestType, query){
+        //     console.log(modelName, id, snapshot, requestType, query);
+        //     return `/messages/${query}`;
+        // },
     namespace:"api"
 });

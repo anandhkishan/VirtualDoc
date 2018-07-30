@@ -21,7 +21,7 @@
              --}}
              {{#each messages as |patList|}} 
              <li>
-                <a {{action "initChat" patList}}  style="color:black;"href="#">{{patList.sender}} : {{patList.content}}</a>
+                <a {{action "initChat" patList}}  style="color:black;"href="#">{{patList.sender}}</a>
             </li>
             {{/each}}
         </ul>

@@ -32,7 +32,7 @@ export default Route.extend({
     setupController: function(controller, model){
         controller.set('name', JSON.parse(localStorage.getItem("loggedin")).name);
         this.store.findAll('message').then(messages => {
-            controller.set('messages', messages);
+            controller.set('messages', messages.uniqBy("patientId"));
             });
     }
     

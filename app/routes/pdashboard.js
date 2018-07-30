@@ -12,7 +12,7 @@ export default Route.extend({
   else if (JSON.parse(user).role == "ROLE_DOCTOR")
       this.transitionTo('d-dashboard');
   else if (JSON.parse(user).role == "ROLE_ADMIN")
-      this.transitionTo('pdashboard');
+      this.transitionTo('admin-dashboard');
       console.log(localStorage.getItem("loggedin"));
 
 

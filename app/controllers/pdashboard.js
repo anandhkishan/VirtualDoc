@@ -6,6 +6,7 @@ export default Controller.extend({
     heartVal:false,
     stressVal:false,
     chatinit:false,
+    // username: localStorage.getItem("loggedin"),
     actions:{
         general(){
             this.set("generalVal",true);
@@ -13,6 +14,7 @@ export default Controller.extend({
             this.set("heartVal",false);
             this.set("stressVal",false);
             localStorage.setItem("typeCat","general");
+            localStorage.setItem("chatPatientid",JSON.parse(localStorage.getItem("loggedin")).id)
             console.log("general");
         },
 
@@ -22,6 +24,7 @@ export default Controller.extend({
             this.set("heartVal",false);
             this.set("stressVal",false);
             localStorage.setItem("typeCat","DBP");
+            localStorage.setItem("chatPatientid",JSON.parse(localStorage.getItem("loggedin")).id)
             console.log("DBP");
         },
         heart(){
@@ -30,6 +33,7 @@ export default Controller.extend({
             this.set("heartVal",true);
             this.set("stressVal",false);
             localStorage.setItem("typeCat","heart");
+            localStorage.setItem("chatPatientid",JSON.parse(localStorage.getItem("loggedin")).id)
             console.log("heart");
         },
         stress(){
@@ -38,6 +42,7 @@ export default Controller.extend({
             this.set("heartVal",false);
             this.set("stressVal",true);
             localStorage.setItem("typeCat","stress");
+            localStorage.setItem("chatPatientid",JSON.parse(localStorage.getItem("loggedin")).id)
             console.log("stress");
         },generalChat(){
             this.set("chatinit",true);
@@ -56,8 +61,6 @@ export default Controller.extend({
         },goBack(){
             this.set("chatinit",false);
            
-             
-            
         }
     }
 //   beforeModel() {

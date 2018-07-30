@@ -4,7 +4,7 @@ export default Route.extend({
     beforeModel() {
         var user = localStorage.getItem("loggedin")
         console.log(user);
-        if (user === null) {
+        if (user == "null") {
             this.transitionTo("home.signup")
         }
         else if (JSON.parse(user).role == "ROLE_PATIENT")

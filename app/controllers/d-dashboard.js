@@ -4,9 +4,15 @@ import {inject as service} from '@ember/service';
 export default Controller.extend({
     chatstart:false,
     chatinit:false,
+    client: service('chat'),
+
     actions:{
-        initChat(){
+        initChat(patList){
             this.set("chatstart",true);
+            // console.log(patList.patientId,"heloasdasd")
+        //    this.get('client').connect(patList.patientId,patList.category)
+           localStorage.setItem("typeCat",patList.category)
+           localStorage.setItem("chatPatientid",patList.patientId)
         },
         goBack(){
             this.set("chatstart",false);
@@ -15,10 +21,7 @@ export default Controller.extend({
         heartChat(){
             this.set("chatinit",true);
 
-
         }
-
-        
     }
     // docCall:service("doctorservice"), 
     // responseMessage:false,
